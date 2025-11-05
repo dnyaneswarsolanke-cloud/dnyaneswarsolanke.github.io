@@ -1,0 +1,52 @@
+<!DOCTYPE html><html><head><title>Happy Birthday!</title><style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #000;
+            overflow: hidden;
+        }
+        
+        .birthday-text {
+            color: #fff;
+            font-size: 3em;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            animation: bounce 1s infinite, colors 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        @keyframes colors {
+            0% { color: #ff0000; }
+            25% { color: #00ff00; }
+            50% { color: #0000ff; }
+            75% { color: #ffff00; }
+            100% { color: #ff0000; }
+        }
+        
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: #f00;
+            animation: confetti 5s infinite;
+        }
+    </style></head><body><div class="birthday-text">
+        Happy Birthday! 🎉🎂
+    </div><script>
+        // Add confetti effect
+        for(let i = 0; i < 50; i++) {
+            const confetti = document.createElement('div');
+            confetti.className = 'confetti';
+            confetti.style.left = Math.random() * 100 + 'vw';
+            confetti.style.animationDelay = Math.random() * 5 + 's';
+            confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+            document.body.appendChild(confetti);
+        }
+    </script></body></html>
